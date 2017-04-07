@@ -19,4 +19,11 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.maven.reflections</groupId>
+            <artifactId>maven-linkchecker-test-findme</artifactId>
+            <version>@project.version@</version>
+        </dependency>
+    </dependencies>
 </project>

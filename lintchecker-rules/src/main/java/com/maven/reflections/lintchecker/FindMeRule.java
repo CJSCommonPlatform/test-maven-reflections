@@ -16,12 +16,13 @@ import org.reflections.scanners.MethodAnnotationsScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 
-public class FindMeRule implements LintCheckRule{
+public class FindMeRule implements LintCheckRule {
 
+    @Override
     public void execute() throws MojoExecutionException {
 
         Reflections reflections = new Reflections(new ConfigurationBuilder()
-                .addUrls(ClasspathHelper.forPackage("com.maven.reflections.lintchecker"))
+                .setUrls(ClasspathHelper.forClassLoader(Thread.currentThread().getContextClassLoader()))
                 .addScanners(new MethodAnnotationsScanner()));
         final Set<Method> lintCheckedMethods = reflections.getMethodsAnnotatedWith(LintChecked.class);
         try {

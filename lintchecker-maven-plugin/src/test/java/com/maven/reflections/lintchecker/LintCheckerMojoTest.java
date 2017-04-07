@@ -2,16 +2,13 @@ package com.maven.reflections.lintchecker;
 
 import java.io.File;
 
-import org.apache.maven.plugin.testing.AbstractMojoTestCase;
-
-public class LintCheckerMojoTest extends AbstractMojoTestCase {
-
+public class LintCheckerMojoTest extends BetterAbstractMojoTestCase {
 
     public void testShouldFindClassAnnotatedWithLintChecked() throws Exception {
 
         final File pom = getTestFile("src/test/resources/pom.xml");
 
-        final LintCheckerMojo mojo = (LintCheckerMojo) lookupMojo("lint-check", pom);
+        final LintCheckerMojo mojo = (LintCheckerMojo) lookupConfiguredMojo( pom, "lint-check");
 
         mojo.execute();
 

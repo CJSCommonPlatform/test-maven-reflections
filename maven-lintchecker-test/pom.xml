@@ -23,7 +23,7 @@
                         <goals>
                             <goal>lint-check</goal>
                         </goals>
-                        <phase>install</phase>
+                        <phase>test</phase>
                         <configuration>
                             <rules>
                                 <FineMeRule
@@ -39,6 +39,11 @@
         <dependency>
             <groupId>com.maven.reflections</groupId>
             <artifactId>lintchecker-annotations</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.maven.reflections</groupId>
+            <artifactId>maven-linkchecker-test-findme</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

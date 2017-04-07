@@ -20,7 +20,7 @@
                 <version>${org.apache.maven.plugins.version}</version>
                 <configuration>
                     <skip>false</skip>
-                    <goalPrefix>raml</goalPrefix>
+                    <goalPrefix>lintchecker</goalPrefix>
                 </configuration>
                 <executions>
                     <execution>
